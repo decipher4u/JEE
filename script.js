@@ -1,3 +1,9 @@
+// Dummy database for storing user information
+let users = [
+  { username: 'user1', password: 'password1' },
+  { username: 'user2', password: 'password2' }
+];
+
 // Function to handle login form submission
 function logIn(event) {
   event.preventDefault();
@@ -33,10 +39,10 @@ function logOut() {
 }
 
 // Add event listener for logout button
-document.getElementById('logout-btn').addEventListener('click', logOut);
+document.getElementById('logout-btn')?.addEventListener('click', logOut);
 
 // Retrieve username from localStorage and display it
 const username = localStorage.getItem('username');
 if (username) {
-  document.getElementById('username').textContent = username;
+  document.getElementById('username')?.textContent = username;
 }
