@@ -1,21 +1,3 @@
-// Dummy database for storing user information
-let users = [];
-
-// Function to handle sign-up form submission
-function signUp(event) {
-  event.preventDefault();
-  const username = document.getElementById('signup-username').value;
-  const password = document.getElementById('signup-password').value;
-  // Check if username already exists
-  if (users.some(user => user.username === username)) {
-    alert('Username already exists!');
-    return;
-  }
-  // Add user to database
-  users.push({ username, password });
-  alert('Sign up successful! Please log in.');
-}
-
 // Function to handle login form submission
 function logIn(event) {
   event.preventDefault();
@@ -33,6 +15,15 @@ function logIn(event) {
     alert('Invalid username or password.');
   }
 }
+
+// Function to reset localStorage on login page load
+function resetLocalStorage() {
+  localStorage.removeItem('username');
+}
+
+// Add event listener for login page load to reset localStorage
+window.addEventListener('load', resetLocalStorage);
+
 // Function to handle logout
 function logOut() {
   // Clear username from localStorage
