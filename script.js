@@ -1,6 +1,6 @@
 // Dummy database for storing user information
 let users = [
-  { username: 'user1', password: 'password1' },
+  { username: 'ddd', password: 'ddd' },
   { username: 'user2', password: 'password2' }
 ];
 
