@@ -37,11 +37,7 @@ function logIn(event) {
 function logOut() {
   // Clear all items from localStorage
   localStorage.clear();
-  // Redirect user to login page
-  window.location.href = 'index.html';
-}
-
-// Add event listener for logout button
+ // Add event listener for logout button
 document.getElementById('logout-btn').addEventListener('click', logOut);
 
 
