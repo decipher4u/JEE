@@ -35,12 +35,17 @@ function logIn(event) {
 }
 // Function to handle logout
 function logOut() {
-  // Clear all items from localStorage
-  localStorage.clear();
- // Add event listener for logout button
+  // Clear username from localStorage
+  localStorage.removeItem('username');
+  // Redirect user to login page
+  window.location.href = 'index.html';
+}
+
+// Add event listener for logout button
 document.getElementById('logout-btn').addEventListener('click', logOut);
 
-
-// Event listeners for form submissions
-document.getElementById('signup-form').addEventListener('submit', signUp);
-document.getElementById('login-form').addEventListener('submit', logIn);
+// Retrieve username from localStorage and display it
+const username = localStorage.getItem('username');
+if (username) {
+  document.getElementById('username').textContent = username;
+}
